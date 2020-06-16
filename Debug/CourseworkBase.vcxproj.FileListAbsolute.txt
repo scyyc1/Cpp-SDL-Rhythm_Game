@@ -1,0 +1,4 @@
+E:\cw\CPPCoursework2020-v101\Debug\CourseworkBase2020.exe
+E:\cw\CPPCoursework2020-v101\Debug\CourseworkBase2020.pdb
+C:\Users\25615\Desktop\CPPCoursework2020-v101\Debug\CourseworkBase2020.exe
+C:\Users\25615\Desktop\CPPCoursework2020-v101\Debug\CourseworkBase2020.pdb

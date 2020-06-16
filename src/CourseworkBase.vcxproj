@@ -14,16 +14,16 @@
     <ProjectGuid>{63F64093-23C3-4181-8554-C22C5AE2DDAC}</ProjectGuid>
     <RootNamespace>Coursework3Game</RootNamespace>
     <ProjectName>CourseworkBase2020</ProjectName>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
@@ -47,7 +47,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\SDL2_mixer-2.0.4\include;..\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -55,8 +55,8 @@
       <WarningLevel>Level2</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\SDL\libx86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\SDL2_mixer-2.0.4\lib\x86;..\SDL\libx86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -76,13 +76,13 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\SDL2_mixer-2.0.4\include;..\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PreprocessorDefinitions>_NDEBUG</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\SDL\libx86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\SDL2_mixer-2.0.4\lib\x86;..\SDL\libx86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <SubSystem>Windows</SubSystem>
@@ -94,9 +94,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BouncingImageObject.h" />
+    <ClInclude Include="Button\Button.h" />
+    <ClInclude Include="Button\Button_start.h" />
+    <ClInclude Include="Button\Button_back.h" />
+    <ClInclude Include="Button\Button_exit.h" />
+    <ClInclude Include="Button\Button_load.h" />
+    <ClInclude Include="Button\Button_stop.h" />
+    <ClInclude Include="Button\Button_rank.h" />
     <ClInclude Include="CardContainer.h" />
     <ClInclude Include="CardOrTile.h" />
     <ClInclude Include="CollisionDetection.h" />
+    <ClInclude Include="Configuration.h" />
+    <ClInclude Include="controller.h" />
     <ClInclude Include="DisplayableObjectContainer.h" />
     <ClInclude Include="DragableImageObject.h" />
     <ClInclude Include="DragableTokenContainer.h" />
@@ -120,7 +129,18 @@
     <ClInclude Include="ImageMappingDemo.h" />
     <ClInclude Include="JigsawDemo.h" />
     <ClInclude Include="JigsawPiece.h" />
+    <ClInclude Include="luckyDraw.h" />
     <ClInclude Include="MappableImageObject.h" />
+    <ClInclude Include="notes\DoubleNote.h" />
+    <ClInclude Include="notes\LongNote.h" />
+    <ClInclude Include="notes\note.h" />
+    <ClInclude Include="notes\SingleNote.h" />
+    <ClInclude Include="Ranking\Ranking.h" />
+    <ClInclude Include="states\State_pause.h" />
+    <ClInclude Include="scripts\Script.h" />
+    <ClInclude Include="Scyyc1Engine.h" />
+    <ClInclude Include="lifeManager.h" />
+    <ClInclude Include="Scyyc1TileManager.h" />
     <ClInclude Include="SimpleFlashingDragableImageObject.h" />
     <ClInclude Include="SimpleImage.h" />
     <ClInclude Include="MovementPosition.h" />
@@ -130,7 +150,17 @@
     <ClInclude Include="RawImage.h" />
     <ClInclude Include="BouncingObject.h" />
     <ClInclude Include="SimpleTrig.h" />
+    <ClInclude Include="speedController.h" />
     <ClInclude Include="StarfieldDemo.h" />
+    <ClInclude Include="states\State.h" />
+    <ClInclude Include="states\State_animation.h" />
+    <ClInclude Include="states\State_gaming.h" />
+    <ClInclude Include="states\State_scriptChoosing.h" />
+    <ClInclude Include="states\State_start.h" />
+    <ClInclude Include="states\State_end.h" />
+    <ClInclude Include="states\State_function.h" />
+    <ClInclude Include="states\State_name.h" />
+    <ClInclude Include="states\State_rank.h" />
     <ClInclude Include="templates.h" />
     <ClInclude Include="TileManager.h" />
     <ClInclude Include="BouncingBall.h" />
@@ -145,16 +175,36 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DragableBaseClassObject.h" />
+    <ClCompile Include="Button\Button.cpp" />
+    <ClCompile Include="Button\Button_start.cpp" />
+    <ClCompile Include="Button\Button_back.cpp" />
+    <ClCompile Include="Button\Button_exit.cpp" />
+    <ClCompile Include="Button\Button_load.cpp" />
+    <ClCompile Include="Button\Button_stop.cpp" />
+    <ClCompile Include="Button\Button_rank.cpp" />
+    <ClCompile Include="Configuration.cpp" />
+    <ClCompile Include="controller.cpp" />
     <ClCompile Include="DraggingDemo.cpp" />
     <ClCompile Include="DrawingSurface.cpp" />
     <ClCompile Include="FlashingDemo.cpp" />
     <ClCompile Include="ImageObjectDemo.cpp" />
     <ClCompile Include="JigsawDemo.cpp" />
+    <ClCompile Include="luckyDraw.cpp" />
     <ClCompile Include="mainfunction.cpp" />
     <ClCompile Include="BaseEngine.cpp" />
     <ClCompile Include="DisplayableObject.cpp" />
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="ImageMappingDemo.cpp" />
+    <ClCompile Include="notes\DoubleNote.cpp" />
+    <ClCompile Include="notes\LongNote.cpp" />
+    <ClCompile Include="notes\note.cpp" />
+    <ClCompile Include="notes\SingleNote.cpp" />
+    <ClCompile Include="Ranking\Ranking.cpp" />
+    <ClCompile Include="states\State_pause.cpp" />
+    <ClCompile Include="scripts\Script.cpp" />
+    <ClCompile Include="Scyyc1Engine.cpp" />
+    <ClCompile Include="lifeManager.cpp" />
+    <ClCompile Include="Scyyc1TileManager.cpp" />
     <ClCompile Include="SimpleImage.cpp" />
     <ClCompile Include="JasonsDemoA.cpp" />
     <ClCompile Include="JasonsObjectA.cpp" />
@@ -162,7 +212,17 @@
     <ClCompile Include="PlayingCardsDemo.cpp" />
     <ClCompile Include="RawImage.cpp" />
     <ClCompile Include="SimpleDemo.cpp" />
+    <ClCompile Include="speedController.cpp" />
     <ClCompile Include="StarfieldDemo.cpp" />
+    <ClCompile Include="states\State.cpp" />
+    <ClCompile Include="states\State_animation.cpp" />
+    <ClCompile Include="states\State_gaming.cpp" />
+    <ClCompile Include="states\State_scriptChoosing.cpp" />
+    <ClCompile Include="states\State_start.cpp" />
+    <ClCompile Include="states\State_end.cpp" />
+    <ClCompile Include="states\State_function.cpp" />
+    <ClCompile Include="states\State_name.cpp" />
+    <ClCompile Include="states\State_rank.cpp" />
     <ClCompile Include="TileManager.cpp" />
     <ClCompile Include="BouncingBall.cpp" />
     <ClCompile Include="BouncingBallMain.cpp" />
@@ -176,6 +236,9 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="ZoomingDemo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="scripts\one.TXT" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -18,6 +18,9 @@
 #include "PlayingCardsDemo.h"
 #include "JasonsDemoA.h"
 
+// My demo
+#include "Scyyc1Engine.h"
+
 // These are passed to initialise to determine the window size
 const int BaseScreenWidth = 1300;
 const int BaseScreenHeight = 800;
@@ -30,7 +33,7 @@ int doProgram(int argc, char *argv[])
 	int iResult = 0;
 	// Needs just one of the following lines - choose which object to create - ENSURE ONLY ONE IS CREATED.
 	// Note these are from simplest to most complex demo.
-	JasonsDemoA oMain; // Jason's version of MyDemoA, MyObjectA and MyTileManagerA
+	//JasonsDemoA oMain; // Jason's version of MyDemoA, MyObjectA and MyTileManagerA
 	//SimpleDemo oMain;
 	//ImageObjectDemo oMain; // Shows drawing images to the foreground and background
 	//BouncingBallMain oMain; // A ball bouncing around with images and shapes drawn
@@ -39,12 +42,15 @@ int doProgram(int argc, char *argv[])
 	
 	//DraggingDemo oMain; // Includes dragable images and image objects
 	//ImageMappingDemo oMain; // Demonstrates the use of coordinate mapping for image drawing
-	//JigsawDemo oMain; // Demonstrates the use of coordinate mapping for image drawing
+	////JigsawDemo oMain; // Demonstrates the use of coordinate mapping for image drawing
 	//PlayingCardsDemo oMain; // The most advanced demo - you may want to ignore this one totally!
 
 	// WARNING: DO NOT RUN THIS DEMO IF YOU ARE AFFECTED BY FLASHING COLOURS!!!
 	//FlashingDemo oMain; // See WARNING above! Simple changing backgrounds
 	//ZoomingDemo oMain;	// WARNING: More flashing here! Shows the use of a filter to shift and rescale the display - this is complex and you can ignore it!
+
+	// My demo
+	Scyyc1Engine oMain;
 
 	char buf[1024];
 	sprintf(buf, "C++ Coursework Framework Program : Size %d x %d", BaseScreenWidth, BaseScreenHeight);
